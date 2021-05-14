@@ -1,0 +1,20 @@
+@using BakeryVendor.Models;
+
+@{
+  Layout = "_Layout";
+}
+
+<h1>@Model.Name</h1>
+<h5>@Model.Description</h5>
+@if (@Model.Orders.Count != 0)
+{
+  @foreach (Order order in @Model.Orders)
+  {
+    <p>Order number: @order.OrderNumber Ordered on @order.OrderDate<a href='order/@order.OrderNumber'>Go</a></p>
+  }
+}
+else
+{
+  <p>@Model.Name does not have any orders</p>
+  <a href="@Model.Id/order/new">Add Order</a>
+}

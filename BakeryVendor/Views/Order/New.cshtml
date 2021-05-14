@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Add Order</h1>
+
+<form action="/vendors/@Model.Id/orders" method="post">
+  <label for="description">Enter your order here: </label>
+  <input id="description" name="description" type="text">
+  <button class="btn btn-success" type="submit">Order</button>
+</form>
+
+<p><a href="/">Cancel</a></p>
