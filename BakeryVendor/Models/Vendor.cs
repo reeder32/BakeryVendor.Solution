@@ -14,6 +14,7 @@ namespace BakeryVendor.Models
     {
       Name = name;
       Description = description;
+      _instances.Add(this);
     }
     public static List<Vendor> GetAll()
     {
