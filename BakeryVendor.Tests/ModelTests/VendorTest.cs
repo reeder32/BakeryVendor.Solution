@@ -37,5 +37,14 @@ namespace BakeryVendor.Tests
       Assert.AreEqual(2, Vendor.GetAll().Count);
     }
 
+    [TestMethod]
+    public void Vendor_ShouldReturnId_Int()
+    {
+      int vendorId = Vendor.GetAll().Count;
+
+      Assert.AreEqual(vendorId, _newVendor.Id);
+    }
+
+
   }
 }
