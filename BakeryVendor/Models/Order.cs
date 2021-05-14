@@ -10,6 +10,7 @@ namespace BakeryVendor.Models
     public Order()
     {
       OrderNumber = _instances.Count;
+      Title = OrderNumber.ToString();
     }
   }
 }

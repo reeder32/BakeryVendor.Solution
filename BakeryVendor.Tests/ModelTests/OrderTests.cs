@@ -22,7 +22,7 @@ namespace BakeryVendor.Tests
 
     public void Order_ShouldCreateOrderWithTitle_String()
     {
-      Assert.AreEqual(_newOrder.Title, 0);
+      Assert.AreEqual(_newOrder.Title, "0");
     }
   }
 }
