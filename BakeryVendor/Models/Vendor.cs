@@ -23,9 +23,21 @@ namespace BakeryVendor.Models
       return _instances;
     }
 
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
+
+    public static Vendor Find(int searchId)
+    {
+      return new Vendor("name", "description");
+    }
+
     public static void ClearAll()
     {
       _instances.Clear();
     }
+
+
   }
 }

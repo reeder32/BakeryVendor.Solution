@@ -45,6 +45,20 @@ namespace BakeryVendor.Tests
       Assert.AreEqual(vendorId, _newVendor.Id);
     }
 
+    [TestMethod]
+    public void AddItem_ShouldAddNewOrderToListOfOrders_ArrayOfItems()
+    {
+      Order newOrder = new Order("description", DateTime.Now);
+      _newVendor.AddOrder(newOrder);
+      List<Order> expected = new List<Order> { newOrder };
+      CollectionAssert.AreEqual(expected, _newVendor.Orders);
+    }
 
+    [TestMethod]
+    public void Find_ShouldBeAbleToFindVendorWithId_Vendor()
+    {
+      Vendor foundVendor = Vendor.Find(_newVendor.Id);
+      Assert.AreEqual(foundVendor, _newVendor);
+    }
   }
 }
