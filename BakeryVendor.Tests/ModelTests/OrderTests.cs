@@ -13,8 +13,8 @@ namespace BakeryVendor.Tests
     public void Order_ShouldCreateOrderWithTitle_String()
     {
       Order newOrder = new Order();
-      newOrder.OrderNumber = 1;
-      Assert.AreEqual(newOrder.OrderNumber, 1);
+
+      Assert.AreEqual(newOrder.OrderNumber, 0);
     }
   }
 }
