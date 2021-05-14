@@ -31,9 +31,10 @@ namespace BakeryVendor.Models
       _instances.Clear();
     }
 
-    public void GetPrice()
+    public double GetPrice()
     {
-
+      Random rando = new Random();
+      return 1.5 * rando.Next(1, 10);
     }
   }
 }
