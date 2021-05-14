@@ -11,7 +11,7 @@ namespace BakeryVendor.Tests
     private static string _vendorName = "Delila's Bakery";
     private static string _vendorDescription = "A Sweet place to eat";
 
-    private Vendor _newVendor = new Vendor(_vendorName);
+    private Vendor _newVendor = new Vendor(_vendorName, _vendorDescription);
     [TestMethod]
     public void Vendor_ShouldCreateVendorWithName_String()
     {

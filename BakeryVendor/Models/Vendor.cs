@@ -8,9 +8,10 @@ namespace BakeryVendor.Models
     public string Description { get; set; }
     private List<Order> _orders = new List<Order> { };
 
-    public Vendor(string name)
+    public Vendor(string name, string description)
     {
       Name = name;
+      Description = description;
     }
   }
 }
