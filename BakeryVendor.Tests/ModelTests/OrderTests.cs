@@ -24,14 +24,14 @@ namespace BakeryVendor.Tests
     {
 
 
-      Assert.AreEqual(0, _newOrder.OrderNumber);
+      Assert.AreEqual(1, _newOrder.OrderNumber);
     }
 
     [TestMethod]
 
     public void Order_ShouldCreateOrderWithTitle_String()
     {
-      Assert.AreEqual("0", _newOrder.Title);
+      Assert.AreEqual("1", _newOrder.Title);
     }
 
     [TestMethod]
@@ -68,6 +68,14 @@ namespace BakeryVendor.Tests
       double result = _newOrder.GetPrice();
 
       Assert.AreEqual(expected.GetType(), result.GetType());
+    }
+
+
+    [TestMethod]
+    public void Find_ShouldBeAbleToFindOrderWithId_Vendor()
+    {
+      Order foundOrder = Order.Find(_newOrder.OrderNumber);
+      Assert.AreEqual(foundOrder, _newOrder);
     }
   }
 }

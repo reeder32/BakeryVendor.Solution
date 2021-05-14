@@ -16,15 +16,20 @@ namespace BakeryVendor.Models
     public Order(string description, DateTime orderDate)
     {
       Description = description;
-      OrderNumber = _instances.Count;
-      Title = OrderNumber.ToString();
       OrderDate = orderDate.ToString();
       _instances.Add(this);
+      OrderNumber = _instances.Count;
+      Title = OrderNumber.ToString();
     }
 
     public static List<Order> GetAll()
     {
       return _instances;
+    }
+
+    public static Order Find(int orderNumber)
+    {
+      return _instances[orderNumber - 1];
     }
     public static void ClearAll()
     {
