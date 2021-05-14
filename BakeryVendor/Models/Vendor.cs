@@ -30,7 +30,7 @@ namespace BakeryVendor.Models
 
     public static Vendor Find(int searchId)
     {
-      return new Vendor("name", "description");
+      return _instances[searchId - 1];
     }
 
     public static void ClearAll()
