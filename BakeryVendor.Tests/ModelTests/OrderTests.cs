@@ -24,5 +24,12 @@ namespace BakeryVendor.Tests
     {
       Assert.AreEqual(_newOrder.Title, "0");
     }
+
+    [TestMethod]
+
+    public void Order_ShouldCreateOrderWithDescription_String()
+    {
+      Assert.AreEqual(_newOrder.Description, "12 loaves of bread");
+    }
   }
 }

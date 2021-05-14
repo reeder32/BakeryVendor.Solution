@@ -6,6 +6,7 @@ namespace BakeryVendor.Models
     public int OrderNumber { get; }
 
     public string Title { get; }
+    public string Description { get; set; }
     private List<Order> _instances = new List<Order> { };
     public Order()
     {
