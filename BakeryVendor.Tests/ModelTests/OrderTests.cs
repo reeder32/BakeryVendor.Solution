@@ -6,32 +6,39 @@ using System;
 namespace BakeryVendor.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
     private static string _orderDescription = "12 loaves of bread";
     private static DateTime _orderDate = DateTime.Now;
     private Order _newOrder = new Order(_orderDescription, _orderDate);
+
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
+
     [TestMethod]
 
     public void Order_ShouldCreateOrderWithOrderNumber_Int()
     {
 
 
-      Assert.AreEqual(_newOrder.OrderNumber, 0);
+      Assert.AreEqual(0, _newOrder.OrderNumber);
     }
 
     [TestMethod]
 
     public void Order_ShouldCreateOrderWithTitle_String()
     {
-      Assert.AreEqual(_newOrder.Title, "0");
+      Assert.AreEqual("0", _newOrder.Title);
     }
 
     [TestMethod]
 
     public void Order_ShouldCreateOrderWithDescription_String()
     {
-      Assert.AreEqual(_newOrder.Description, "12 loaves of bread");
+      Assert.AreEqual("12 loaves of bread", _newOrder.Description);
     }
 
     [TestMethod]
@@ -50,9 +57,7 @@ namespace BakeryVendor.Tests
       Order secondOrder = new Order(_orderDescription, _orderDate);
       List<Order> expectedOrder = new List<Order> { _newOrder, secondOrder };
 
-      List<Order> resultOrder = Order.GetAll();
-
-      CollectionAssert.AreEqual(expectedOrder, resultOrder);
+      Assert.AreEqual(expectedOrder.Count, Order.GetAll().Count);
     }
   }
 }
