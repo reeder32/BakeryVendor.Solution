@@ -8,8 +8,9 @@ namespace BakeryVendor.Models
     public string Title { get; }
     public string Description { get; set; }
     private List<Order> _instances = new List<Order> { };
-    public Order()
+    public Order(string description)
     {
+      Description = description;
       OrderNumber = _instances.Count;
       Title = OrderNumber.ToString();
     }

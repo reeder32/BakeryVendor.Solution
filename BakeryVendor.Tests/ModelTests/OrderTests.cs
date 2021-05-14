@@ -8,7 +8,8 @@ namespace BakeryVendor.Tests
   [TestClass]
   public class OrderTests
   {
-    private Order _newOrder = new Order();
+    private static string _orderDescription = "12 loaves of bread";
+    private Order _newOrder = new Order(_orderDescription);
     [TestMethod]
 
     public void Order_ShouldCreateOrderWithOrderNumber_Int()
