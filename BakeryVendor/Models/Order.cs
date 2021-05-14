@@ -10,7 +10,7 @@ namespace BakeryVendor.Models
     public string Title { get; }
     public string Description { get; set; }
     public string OrderDate { get; set; }
-    public double price { get; set; } = 0.0;
+    public double Price { get; set; } = 0.0;
 
     private static List<Order> _instances = new List<Order> { };
     public Order(string description, DateTime orderDate)
@@ -36,10 +36,10 @@ namespace BakeryVendor.Models
       _instances.Clear();
     }
 
-    public double GetPrice()
+    public void GetPrice()
     {
       Random rando = new Random();
-      return 1.5 * rando.Next(1, 10);
+      Price = 1.5 * rando.Next(1, 10);
     }
   }
 }

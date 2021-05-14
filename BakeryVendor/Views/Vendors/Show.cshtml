@@ -10,7 +10,8 @@
 {
   @foreach (Order order in @Model.Orders)
   {
-    <p>Order number: @order.OrderNumber Ordered on @order.OrderDate<a href='order/@order.OrderNumber'>Go</a></p>
+    <p>Order number: @order.OrderNumber Ordered on @order.OrderDate<a href='@Model.Id/order/@order.OrderNumber'>
+    Go</a></p>
   }
 }
 else

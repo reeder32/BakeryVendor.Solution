@@ -65,9 +65,9 @@ namespace BakeryVendor.Tests
     public void GetPrice_ShouldReturnRandomDoubleBasedOnNumberOfOrders_Double()
     {
       double expected = 12.40;
-      double result = _newOrder.GetPrice();
+      _newOrder.GetPrice();
 
-      Assert.AreEqual(expected.GetType(), result.GetType());
+      Assert.AreEqual(expected.GetType(), _newOrder.Price.GetType());
     }
 
 
