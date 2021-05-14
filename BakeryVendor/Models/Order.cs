@@ -19,5 +19,10 @@ namespace BakeryVendor.Models
       Title = OrderNumber.ToString();
       OrderDate = orderDate.ToString();
     }
+
+    public static List<Order> GetAll()
+    {
+      return new List<Order> { };
+    }
   }
 }
