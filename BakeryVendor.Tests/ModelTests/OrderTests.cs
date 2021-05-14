@@ -52,12 +52,22 @@ namespace BakeryVendor.Tests
 
     [TestMethod]
 
-    public void Order_ShouldAddOrderToInstances_ArrayOfOrders()
+    public void GetAll_ShouldAddOrderToInstancesAndReturnAllORders_ArrayOfOrders()
     {
       Order secondOrder = new Order(_orderDescription, _orderDate);
       List<Order> expectedOrder = new List<Order> { _newOrder, secondOrder };
 
       Assert.AreEqual(expectedOrder.Count, Order.GetAll().Count);
+    }
+
+    [TestMethod]
+
+    public void GetPrice_ShouldReturnRandomDoubleBasedOnNumberOfOrders_Double()
+    {
+      double expected = 45.90;
+      double result = _newOrder.GetPrice();
+
+      Assert.AreEqual(typeof(expected), result.GetType());
     }
   }
 }

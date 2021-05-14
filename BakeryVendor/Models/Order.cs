@@ -9,8 +9,9 @@ namespace BakeryVendor.Models
 
     public string Title { get; }
     public string Description { get; set; }
-
     public string OrderDate { get; set; }
+    public double price { get; set; } = 0.0;
+
     private static List<Order> _instances = new List<Order> { };
     public Order(string description, DateTime orderDate)
     {
@@ -28,6 +29,11 @@ namespace BakeryVendor.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public void GetPrice()
+    {
+
     }
   }
 }
