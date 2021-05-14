@@ -17,6 +17,7 @@ namespace BakeryVendor.Models
       Description = description;
       OrderNumber = _instances.Count;
       Title = OrderNumber.ToString();
+      OrderDate = orderDate.ToString();
     }
   }
 }
