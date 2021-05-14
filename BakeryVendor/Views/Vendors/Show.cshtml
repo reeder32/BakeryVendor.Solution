@@ -12,7 +12,7 @@
   {
     <p>Order number: @order.OrderNumber Ordered on @order.OrderDate<a href='@Model.Id/order/@order.OrderNumber'>
     Go</a></p>
-    <br>
+    <hr />
   }
 }
 else
@@ -20,4 +20,3 @@ else
   <p>@Model.Name does not have any orders</p>
 }
 <a href="@Model.Id/order/new">Add Order</a>
-<a href="/vendors">Back To Vendors</a>
